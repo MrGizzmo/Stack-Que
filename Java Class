@@ -1,0 +1,85 @@
+	import java.util.ArrayList;
+
+/*
+//This is a second class to Java Project 
+ 1) it will change modes
+ 2) Hold the arrayList of strings 
+ 3) If mode = Queue it will delete first item in array_List and add item to the back
+ 	Queue will delete from Front, move all elemnts forward and add new elements in the 
+ 		back 
+ 			Think of a line at a fast food retruant were the first person orders, grabs 
+ 			their food and new people join the line from the back and move forward. 
+ //---------------------------------------------------------------------------------------
+ 3) If mode = Stack it will delete Last item in array_List and add item to the top   
+ 	Stack will delete from top of a stack and delete from the top  
+ 			Think of papaers stacked in a pile, and you grab from the top of the pile		
+ 	
+ 4) make the Clear button function work properly  
+ 5) lastly use a ToString method to put all arrayList elements into a string to show
+ to a user 
+*/
+import java.util.Set;
+
+
+	public class Project_Class <E> {
+
+	// Creating mode to check Stack or Queue 
+	private static String mode = "Stacking Order";
+	protected Boolean Toggle = true; 
+	
+	
+
+	//ArrayList to hold everything user types into List 
+	private ArrayList<E> Array_List = new ArrayList<E>();
+		
+	public void Add(E string) {
+		Array_List.add(string);	
+	};
+	
+	//Del method will delete from Array_List depending on mode
+	public void Del() 
+	{
+				
+		if (mode == "Stacking Order") {
+		
+			if (Array_List.size() > 0) { 
+				Array_List.remove(Array_List.size() -1);
+			}
+			else {
+				
+			}		
+		}				
+		else { 
+			
+			if (Array_List.size() > 0) { 
+				Array_List.remove(0);
+			}
+			else { 
+						}	
+			}
+	}
+
+	// Clears array list
+	public void Clear() { 
+		Array_List.clear();
+	}
+	
+
+	public void Toggle(boolean b) { 
+		if (b == true) { 
+				Toggle = true; 
+				mode = "Stacking Order";
+		}
+		else { 
+			Toggle = false; 
+			mode = "Queue Order";
+		}
+		
+}		
+	public String toString() { 
+		return Array_List.toString(); // ToString will need to return to the output box 		
+
+	}	
+
+}
+
